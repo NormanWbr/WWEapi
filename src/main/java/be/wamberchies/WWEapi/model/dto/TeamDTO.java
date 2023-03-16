@@ -14,12 +14,15 @@ public class TeamDTO {
     private String name;
     private Set<SuperstarDTO> superstars;
 
-    public static TeamDTO from(Team entity){
-        return TeamDTO.builder()
-                .id(entity.getId())
-                .name(entity.getName())
-                .superstars(entity.getSuperstars().stream().map(SuperstarDTO::from).collect(java.util.stream.Collectors.toSet()))
-                .build();
-    }
+    public static TeamDTO from(Team entity) {
+        if (entity != null) {
+            return TeamDTO.builder()
+                    .id(entity.getId())
+                    .name(entity.getName())
+                    .superstars(entity.getSuperstars().stream().map(SuperstarDTO::from).collect(java.util.stream.Collectors.toSet()))
+                    .build();
+        }else{
+            return null;
+        }
 
-}
+    }}
