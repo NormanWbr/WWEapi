@@ -1,7 +1,6 @@
 package be.wamberchies.WWEapi.model.dto;
 
 import be.wamberchies.WWEapi.model.entity.Championship;
-import be.wamberchies.WWEapi.model.entity.Superstar;
 import be.wamberchies.WWEapi.model.entity.enums.Gender;
 import lombok.Builder;
 import lombok.Data;
@@ -13,15 +12,16 @@ public class ChampionshipDTO {
     private String name;
     private String description;
     private Gender gender;
-    private SuperstarDTO superstar;
 
-    public static ChampionshipDTO from(Championship entity){
-return ChampionshipDTO.builder()
-        .id(entity.getId())
-        .name(entity.getName())
-        .description(entity.getDescription())
-        .gender(entity.getGender())
-        .superstar(SuperstarDTO.from(entity.getSuperstar()))
-        .build();
+    private String superstar;
+
+    public static ChampionshipDTO from(Championship entity) {
+        return ChampionshipDTO.builder()
+                .id(entity.getId())
+                .name(entity.getName())
+                .description(entity.getDescription())
+                .gender(entity.getGender())
+                .superstar(entity.getSuperstar().getName())
+                .build();
     }
 }

@@ -13,6 +13,8 @@ public class SuperstarForm {
     private String entranceMusic;
     private Boolean Heel;
 
+    private String image;
+
     public Superstar toEntity() {
         Superstar superstar = new Superstar();
         superstar.setName(this.name);
@@ -21,6 +23,7 @@ public class SuperstarForm {
         superstar.setWeight(this.weight);
         superstar.setEntranceMusic(this.entranceMusic);
         superstar.setHeel(this.Heel);
+        superstar.setImage(this.image);
         return superstar;
     }
 

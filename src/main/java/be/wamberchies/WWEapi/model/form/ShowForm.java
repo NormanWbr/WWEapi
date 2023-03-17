@@ -7,7 +7,6 @@ import lombok.Data;
 @Data
 public class ShowForm {
 
-    private Long id;
 
     private String name;
 
@@ -15,7 +14,6 @@ public class ShowForm {
 
     public Show toEntity() {
         Show show = new Show();
-        show.setId(this.id);
         show.setName(this.name);
         show.setFrequency(this.frequency);
         return show;

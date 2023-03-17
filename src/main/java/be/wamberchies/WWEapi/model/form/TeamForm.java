@@ -5,14 +5,11 @@ import lombok.Data;
 
 @Data
 public class TeamForm {
-
-    private Long id;
     private String name;
 
     public Team toEntity() {
         Team team = new Team();
 
-        team.setId(this.id);
         team.setName(this.name);
 
         return team;

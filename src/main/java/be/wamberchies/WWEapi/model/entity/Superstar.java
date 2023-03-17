@@ -49,4 +49,6 @@ public class Superstar {
     @ManyToMany(mappedBy = "superstars")
     private Set<Show> shows = new LinkedHashSet<>();
 
+    private String image;
+
 }

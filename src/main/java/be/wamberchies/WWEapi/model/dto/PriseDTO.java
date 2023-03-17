@@ -4,7 +4,7 @@ import be.wamberchies.WWEapi.model.entity.enums.Type;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Builder
@@ -14,7 +14,8 @@ public class PriseDTO {
     private String name;
     private String description;
     private Type type;
-    private Set<SuperstarDTO> superstars;
+
+    private List<String> superstars;
 
     public static PriseDTO from(be.wamberchies.WWEapi.model.entity.Prise entity){
         return PriseDTO.builder()
@@ -22,7 +23,7 @@ public class PriseDTO {
                 .name(entity.getName())
                 .description(entity.getDescription())
                 .type(entity.getType())
-                .superstars(entity.getSuperstars().stream().map(SuperstarDTO::from).collect(java.util.stream.Collectors.toSet()))
+                .superstars(entity.getSuperstars().stream().map(be.wamberchies.WWEapi.model.entity.Superstar::getName).collect(java.util.stream.Collectors.toList()))
                 .build();
     }
 
