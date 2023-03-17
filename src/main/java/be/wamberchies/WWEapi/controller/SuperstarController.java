@@ -12,11 +12,12 @@ import java.util.List;
 @RequestMapping("/superstar")
 public class SuperstarController {
 
-    private SuperstarService superstarService;
+    private final SuperstarService superstarService;
 
     public SuperstarController(SuperstarService superstarService) {
         this.superstarService = superstarService;
     }
+
 
     @GetMapping("/all")
     public List<SuperstarDTO> getAll() {

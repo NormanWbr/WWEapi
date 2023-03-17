@@ -1,12 +1,8 @@
 package be.wamberchies.WWEapi.model.form;
 
-import be.wamberchies.WWEapi.model.dto.*;
 import be.wamberchies.WWEapi.model.entity.Superstar;
 import be.wamberchies.WWEapi.model.entity.enums.Gender;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-
-import java.util.Set;
 
 @Data
 public class SuperstarForm {
