@@ -3,12 +3,14 @@ package be.wamberchies.WWEapi.utils;
 import be.wamberchies.WWEapi.model.entity.Championship;
 import be.wamberchies.WWEapi.model.entity.Show;
 import be.wamberchies.WWEapi.model.entity.Superstar;
+import be.wamberchies.WWEapi.model.entity.Team;
 import be.wamberchies.WWEapi.model.entity.enums.Frequency;
 import be.wamberchies.WWEapi.model.entity.enums.Gender;
 import be.wamberchies.WWEapi.repository.*;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
 import java.util.Set;
 
 @Component
@@ -33,299 +35,238 @@ public class DataInit implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
 
-        Superstar superstar = new Superstar();
+        Team Bloodline = new Team();
 
-        superstar.setName("Roman Reigns");
-        superstar.setWeight(120);
-        superstar.setHeight(180);
-        superstar.setEntranceMusic("Head of the Table");
-        superstar.setHeel(true);
-        superstar.setGender(Gender.MALE);
-        superstar.setImage("https://www.wwe.com/f/styles/wwe_1_1_460/public/all/2022/04/Roman_Profile--f2e24f84ca2679ca0be9da35cb9be6fd.png");
-        superstarRepository.save(superstar);
+        Bloodline.setName("Bloodline");
+        Bloodline.setHeel(true);
 
-        superstar = new Superstar();
+        teamRepository.save(Bloodline);
 
-        superstar.setName("John Cena");
-        superstar.setWeight(110);
-        superstar.setHeight(185);
-        superstar.setEntranceMusic("The Time is Now");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.MALE);
-        superstar.setImage("https://www.wwe.com/f/styles/talent_champion_lg/public/all/2022/06/CENA_06272022sb_0015_profile--5427418d87bc164613aaf74b1e5ef112.png");
-        superstarRepository.save(superstar);
+        Team LitaBecky = new Team();
 
-        superstar = new Superstar();
+        LitaBecky.setName("Lita & Becky Lynch");
+        LitaBecky.setHeel(false);
 
-        superstar.setName("Stone Cold Steeve Austin");
-        superstar.setWeight(118);
-        superstar.setHeight(188);
-        superstar.setEntranceMusic("Glass Shatters");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.MALE);
-        superstarRepository.save(superstar);
+        teamRepository.save(LitaBecky);
 
-        superstar = new Superstar();
+        Superstar RomanReigns = new Superstar();
 
-        superstar.setName("Undertaker");
-        superstar.setWeight(135);
-        superstar.setHeight(203);
-        superstar.setEntranceMusic("Rest In Peace");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.MALE);
-        superstarRepository.save(superstar);
+        RomanReigns.setName("Roman Reigns");
+        RomanReigns.setGender(Gender.MALE);
+        RomanReigns.setWeight(130);
+        RomanReigns.setHeight(191);
+        RomanReigns.setHeel(true);
+        RomanReigns.setEntranceMusic("The Head Of The Table");
+        RomanReigns.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Roman%20Reigns.jpg?raw=true");
+        RomanReigns.setTeam(Bloodline);
 
-        superstar = new Superstar();
+        superstarRepository.save(RomanReigns);
 
-        superstar.setName("Trish Stratus");
-        superstar.setWeight(57);
-        superstar.setHeight(163);
-        superstar.setEntranceMusic("Time to Rock and Roll");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.FEMALE);
-        superstarRepository.save(superstar);
+        Superstar Gunther = new Superstar();
 
-        superstar = new Superstar();
+        Gunther.setName("Gunther");
+        Gunther.setGender(Gender.MALE);
+        Gunther.setWeight(137.72);
+        Gunther.setHeight(193);
+        Gunther.setHeel(true);
+        Gunther.setEntranceMusic("Prepare To Fight");
+        Gunther.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Gunther.jpg?raw=true");
 
-        superstar.setName("Triple H");
-        superstar.setWeight(117);
-        superstar.setHeight(193);
-        superstar.setEntranceMusic("The Game");
-        superstar.setHeel(true);
-        superstar.setGender(Gender.MALE);
-        superstarRepository.save(superstar);
+        superstarRepository.save(Gunther);
 
-        superstar = new Superstar();
+        Superstar AustinTheory = new Superstar();
 
-        superstar.setName("The Rock");
-        superstar.setWeight(120);
-        superstar.setHeight(193);
-        superstar.setEntranceMusic("Electrifying");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.MALE);
-        superstarRepository.save(superstar);
+        AustinTheory.setName("Austin Theory");
+        AustinTheory.setGender(Gender.MALE);
+        AustinTheory.setWeight(100);
+        AustinTheory.setHeight(185);
+        AustinTheory.setHeel(true);
+        AustinTheory.setEntranceMusic("A-Town Down");
+        AustinTheory.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Austin%20Theory.jpg?raw=true");
 
-        superstar = new Superstar();
+        superstarRepository.save(AustinTheory);
 
-        superstar.setName("Beckyy Lynch");
-        superstar.setWeight(61);
-        superstar.setHeight(168);
-        superstar.setEntranceMusic("Celtic Invasion");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.FEMALE);
-        superstarRepository.save(superstar);
+        Superstar JeyUso = new Superstar();
 
-        superstar = new Superstar();
+        JeyUso.setName("Jey Uso");
+        JeyUso.setGender(Gender.MALE);
+        JeyUso.setWeight(110);
+        JeyUso.setHeight(188);
+        JeyUso.setHeel(true);
+        JeyUso.setEntranceMusic("Done With That");
+        JeyUso.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Jey%20Uso.jpg?raw=true");
+        JeyUso.setTeam(Bloodline);
 
-        superstar.setName("Randy Orton");
-        superstar.setWeight(110);
-        superstar.setHeight(196);
-        superstar.setEntranceMusic("Voices");
-        superstar.setHeel(true);
-        superstar.setGender(Gender.MALE);
-        superstarRepository.save(superstar);
+        superstarRepository.save(JeyUso);
 
-        superstar = new Superstar();
+        Superstar JimmyUso = new Superstar();
 
-        superstar.setName("Charlotte Flair");
-        superstar.setWeight(65);
-        superstar.setHeight(178);
-        superstar.setEntranceMusic("Recognition");
-        superstar.setHeel(true);
-        superstar.setGender(Gender.FEMALE);
-        superstarRepository.save(superstar);
+        JimmyUso.setName("Jimmy Uso");
+        JimmyUso.setGender(Gender.MALE);
+        JimmyUso.setWeight(114);
+        JimmyUso.setHeight(191);
+        JimmyUso.setHeel(true);
+        JimmyUso.setEntranceMusic("Done With That");
+        JimmyUso.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Jimmy%20Uso.jpg?raw=true");
+        JimmyUso.setTeam(Bloodline);
 
-        superstar = new Superstar();
+        superstarRepository.save(JimmyUso);
 
-        superstar.setName("Brock Lesnarr");
-        superstar.setWeight(130);
-        superstar.setHeight(190);
-        superstar.setEntranceMusic("Next Big Thing");
-        superstar.setHeel(true);
-        superstar.setGender(Gender.MALE);
-        superstarRepository.save(superstar);
+        Superstar CharlotteFlair = new Superstar();
 
-        superstar = new Superstar();
+        CharlotteFlair.setName("Charlotte Flair");
+        CharlotteFlair.setGender(Gender.FEMALE);
+        CharlotteFlair.setWeight(65);
+        CharlotteFlair.setHeight(178);
+        CharlotteFlair.setHeel(false);
+        CharlotteFlair.setEntranceMusic("Recognition");
+        CharlotteFlair.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Charlotte%20Flair.jpg?raw=true");
 
-        superstar.setName("Sasha Banks");
-        superstar.setWeight(52);
-        superstar.setHeight(165);
-        superstar.setEntranceMusic("Sky's the Limit");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.FEMALE);
-        superstarRepository.save(superstar);
+        superstarRepository.save(CharlotteFlair);
 
-        superstar = new Superstar();
+        Superstar BiancaBelair = new Superstar();
 
-        superstar.setName("Eddie Guerrerro");
-        superstar.setWeight(100);
-        superstar.setHeight(173);
-        superstar.setEntranceMusic("Latino Heat");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.MALE);
-        superstarRepository.save(superstar);
+        BiancaBelair.setName("Bianca Belair");
+        BiancaBelair.setGender(Gender.FEMALE);
+        BiancaBelair.setWeight(75);
+        BiancaBelair.setHeight(170);
+        BiancaBelair.setHeel(false);
+        BiancaBelair.setEntranceMusic("Watch Me Shine");
+        BiancaBelair.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Bianca%20Belair.jpg?raw=true");
 
-        superstar = new Superstar();
+        superstarRepository.save(BiancaBelair);
 
-        superstar.setName("Bayley");
-        superstar.setWeight(60);
-        superstar.setHeight(168);
-        superstar.setEntranceMusic("Hey Hey Bayley");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.FEMALE);
-        superstarRepository.save(superstar);
+        Superstar Lita = new Superstar();
 
-        superstar = new Superstar();
+        Lita.setName("Lita");
+        Lita.setGender(Gender.FEMALE);
+        Lita.setWeight(61);
+        Lita.setHeight(168);
+        Lita.setHeel(false);
+        Lita.setEntranceMusic("Lovefurypassionenergy");
+        Lita.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Lita.jpg?raw=true");
+        Lita.setTeam(LitaBecky);
 
-        superstar.setName("Shawn Michaells");
-        superstar.setWeight(102);
-        superstar.setHeight(183);
-        superstar.setEntranceMusic("Sexy Boy");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.MALE);
-        superstarRepository.save(superstar);
+        superstarRepository.save(Lita);
 
-        superstar = new Superstar();
+        Superstar BeckyLynch = new Superstar();
 
-        superstar.setName("Naomi");
-        superstar.setWeight(57);
-        superstar.setHeight(165);
-        superstar.setEntranceMusic("Amazing");
-        superstar.setHeel(false);
-        superstar.setGender(Gender.FEMALE);
-        superstarRepository.save(superstar);
+        BeckyLynch.setName("Becky Lynch");
+        BeckyLynch.setGender(Gender.FEMALE);
+        BeckyLynch.setWeight(68);
+        BeckyLynch.setHeight(161);
+        BeckyLynch.setHeel(false);
+        BeckyLynch.setEntranceMusic("Celtic Invasion");
+        BeckyLynch.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Becky%20Lynch.jpg?raw=true");
+        BeckyLynch.setTeam(LitaBecky);
 
-        Championship rw = new Championship();
+        superstarRepository.save(BeckyLynch);
 
-        rw.setName("Raw Women's Championship");
-        rw.setDescription("Major title of the Raw brand for women");
-        rw.setGender(Gender.FEMALE);
-        superstar = superstarRepository.findById(5L).get();
-        rw.setSuperstar(superstar);
-        championshipRepository.save(rw);
-        superstar.setChampionships(Set.of(rw));
-        superstarRepository.save(superstar);
+        Show Raw = new Show();
 
-        Championship sdw = new Championship();
+        Raw.setName("Raw");
+        Raw.setFrequency(Frequency.WEEKLY);
+        Raw.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Raw.png?raw=true");
 
-        sdw.setName("SmackDown Women's Championship");
-        sdw.setDescription("Major title of the SmackDown brand for women");
-        sdw.setGender(Gender.FEMALE);
-        superstar = superstarRepository.findById(8L).get();
-        sdw.setSuperstar(superstar);
-        championshipRepository.save(sdw);
-        superstar.setChampionships(Set.of(sdw));
-        superstarRepository.save(superstar);
+        showRepository.save(Raw);
 
-        Championship universal = new Championship();
+        Show SmackDown = new Show();
 
-        universal.setName("Universal Championship");
-        universal.setDescription("Major title of WWE");
-        universal.setGender(Gender.MALE);
-        superstar = superstarRepository.findById(1L).get();
-        universal.setSuperstar(superstar);
-        championshipRepository.save(universal);
-        superstar.setChampionships(Set.of(universal));
-        superstarRepository.save(superstar);
+        SmackDown.setName("SmackDown");
+        SmackDown.setFrequency(Frequency.WEEKLY);
+        SmackDown.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/SmackDown.png?raw=true");
 
-        Championship wwe = new Championship();
+        showRepository.save(SmackDown);
 
-        wwe.setName("WWE Championship");
-        wwe.setDescription("Major title of WWE");
-        wwe.setGender(Gender.MALE);
-        superstar = superstarRepository.findById(2L).get();
-        wwe.setSuperstar(superstar);
-        championshipRepository.save(wwe);
-        superstar.setChampionships(Set.of(wwe));
-        superstarRepository.save(superstar);
+        Show Wrestlemania = new Show();
 
-        Championship ic = new Championship();
+        Wrestlemania.setName("Wrestlemania");
+        Wrestlemania.setFrequency(Frequency.YEARLY);
+        Wrestlemania.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Wrestlemania%2039.png?raw=true");
 
-        ic.setName("Intercontinental Championship");
-        ic.setDescription("Major title of WWE for male wrestlers");
-        ic.setGender(Gender.MALE);
-        superstar = superstarRepository.findById(3L).get();
-        ic.setSuperstar(superstar);
-        championshipRepository.save(ic);
-        superstar.setChampionships(Set.of(ic));
-        superstarRepository.save(superstar);
+        showRepository.save(Wrestlemania);
 
-        Championship us = new Championship();
+        Championship WWEChampionship = new Championship();
 
-        us.setName("United States Championship");
-        us.setDescription("Major title of WWE for male wrestlers");
-        us.setGender(Gender.MALE);
-        superstar = superstarRepository.findById(4L).get();
-        us.setSuperstar(superstar);
-        championshipRepository.save(us);
-        superstar.setChampionships(Set.of(us));
-        superstarRepository.save(superstar);
+        WWEChampionship.setName("WWE Championship");
+        WWEChampionship.setDescription("");
+        WWEChampionship.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Titles/WWE%20World%20Heavyweight%20Championship.png?raw=true");
+        WWEChampionship.setSuperstars(Set.of(RomanReigns));
 
-        Show raw = new Show();
+        championshipRepository.save(WWEChampionship);
 
-        raw.setName("Raw");
-        raw.setFrequency(Frequency.WEEKLY);
-        raw.setSuperstars(
-                Set.of(
-                        superstarRepository.findById(1L).get(),
-                        superstarRepository.findById(2L).get(),
-                        superstarRepository.findById(3L).get(),
-                        superstarRepository.findById(4L).get(),
-                        superstarRepository.findById(5L).get(),
-                        superstarRepository.findById(6L).get(),
-                        superstarRepository.findById(7L).get(),
-                        superstarRepository.findById(8L).get()
+        Championship UniversalChampionship = new Championship();
 
-                )
-        );
+        UniversalChampionship.setName("Universal Championship");
+        UniversalChampionship.setDescription("");
+        UniversalChampionship.setSuperstars(Set.of(RomanReigns));
+        UniversalChampionship.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Titles/WWE%20Universal%20Championship.png?raw=true");
 
-        showRepository.save(raw);
+        championshipRepository.save(UniversalChampionship);
 
-        Show smackdown = new Show();
+        Championship IntercontinentalChampionship = new Championship();
 
-        smackdown.setName("SmackDown");
-        smackdown.setFrequency(Frequency.WEEKLY);
-        smackdown.setSuperstars(
-                Set.of(
-                        superstarRepository.findById(9L).get(),
-                        superstarRepository.findById(10L).get(),
-                        superstarRepository.findById(11L).get(),
-                        superstarRepository.findById(12L).get(),
-                        superstarRepository.findById(13L).get(),
-                        superstarRepository.findById(14L).get(),
-                        superstarRepository.findById(15L).get(),
-                        superstarRepository.findById(16L).get()
-                )
-        );
+        IntercontinentalChampionship.setName("Intercontinental Championship");
+        IntercontinentalChampionship.setDescription("");
+        IntercontinentalChampionship.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Titles/WWE%20Intercontinental%20Championship.png?raw=true");
+        IntercontinentalChampionship.setSuperstars(Set.of(Gunther));
 
-        showRepository.save(smackdown);
+        championshipRepository.save(IntercontinentalChampionship);
 
-        Show wrestlemania = new Show();
+        Championship UnitedStatesChampionship = new Championship();
 
-        wrestlemania.setName("WrestleMania");
-        wrestlemania.setFrequency(Frequency.YEARLY);
-        wrestlemania.setSuperstars(
-                Set.of(
-                        superstarRepository.findById(1L).get(),
-                        superstarRepository.findById(2L).get(),
-                        superstarRepository.findById(3L).get(),
-                        superstarRepository.findById(4L).get(),
-                        superstarRepository.findById(5L).get(),
-                        superstarRepository.findById(6L).get(),
-                        superstarRepository.findById(7L).get(),
-                        superstarRepository.findById(8L).get(),
-                        superstarRepository.findById(9L).get(),
-                        superstarRepository.findById(10L).get(),
-                        superstarRepository.findById(11L).get(),
-                        superstarRepository.findById(12L).get(),
-                        superstarRepository.findById(13L).get(),
-                        superstarRepository.findById(14L).get(),
-                        superstarRepository.findById(15L).get(),
-                        superstarRepository.findById(16L).get()
-                )
-        );
+        UnitedStatesChampionship.setName("United States Championship");
+        UnitedStatesChampionship.setDescription("");
+        UnitedStatesChampionship.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Titles/WWE%20United%20States%20Championship.png?raw=true");
+        UnitedStatesChampionship.setSuperstars(Set.of(AustinTheory));
 
-        showRepository.save(wrestlemania);
+        championshipRepository.save(UnitedStatesChampionship);
+
+        Championship RawWomenChampionship = new Championship();
+
+        RawWomenChampionship.setName("Raw Women's Championship");
+        RawWomenChampionship.setDescription("");
+        RawWomenChampionship.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Titles/WWE%20Raw%20Women%20Championship.png?raw=true");
+        RawWomenChampionship.setSuperstars(Set.of(BiancaBelair));
+
+        championshipRepository.save(RawWomenChampionship);
+
+        Championship SmackDownWomenChampionship = new Championship();
+
+        SmackDownWomenChampionship.setName("SmackDown Women's Championship");
+        SmackDownWomenChampionship.setDescription("");
+        SmackDownWomenChampionship.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Titles/WWE%20SmackDown%20Women%20Championship.png?raw=true");
+        SmackDownWomenChampionship.setSuperstars(Set.of(CharlotteFlair));
+
+        championshipRepository.save(SmackDownWomenChampionship);
+
+        Championship RawTagTeamChampionship = new Championship();
+
+        RawTagTeamChampionship.setName("Raw Tag Team Championship");
+        RawTagTeamChampionship.setDescription("");
+        RawTagTeamChampionship.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Titles/WWE%20Raw%20Tag%20Team%20Championship.png?raw=true");
+        RawTagTeamChampionship.setSuperstars(Set.of(JimmyUso, JeyUso));
+
+        championshipRepository.save(RawTagTeamChampionship);
+
+        Championship SmackDownTagTeamChampionship = new Championship();
+
+        SmackDownTagTeamChampionship.setName("SmackDown Tag Team Championship");
+        SmackDownTagTeamChampionship.setDescription("");
+        SmackDownTagTeamChampionship.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Titles/WWE%20SmackDown%20Tag%20Team%20Championship.png?raw=true");
+        SmackDownTagTeamChampionship.setSuperstars(Set.of(JimmyUso, JeyUso));
+
+        championshipRepository.save(SmackDownTagTeamChampionship);
+
+        Championship WomenTagTeamChampionship = new Championship();
+
+        WomenTagTeamChampionship.setName("WWE Women's Tag Team Championship ");
+        WomenTagTeamChampionship.setDescription("");
+        WomenTagTeamChampionship.setImage("https://github.com/NormanWbr/WWEapi/blob/master/src/main/java/be/wamberchies/WWEapi/WWE%20Photo/Titles/WWE%20Womens%20Tag%20Team%20Championship.png?raw=true");
+        WomenTagTeamChampionship.setSuperstars(Set.of(Lita, BeckyLynch));
+
+        championshipRepository.save(WomenTagTeamChampionship);
+
 
     }
 }

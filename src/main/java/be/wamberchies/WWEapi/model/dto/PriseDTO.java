@@ -21,7 +21,6 @@ public class PriseDTO {
         return PriseDTO.builder()
                 .id(entity.getId())
                 .name(entity.getName())
-                .description(entity.getDescription())
                 .type(entity.getType())
                 .superstars(entity.getSuperstars().stream().map(be.wamberchies.WWEapi.model.entity.Superstar::getName).collect(java.util.stream.Collectors.toList()))
                 .build();

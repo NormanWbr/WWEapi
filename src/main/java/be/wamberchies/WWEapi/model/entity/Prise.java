@@ -20,16 +20,13 @@ public class Prise {
     private String name;
 
     @Column(nullable = false)
-    private String description;
-
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Type type;
 
     @ManyToMany
     @JoinTable(name = "prise_superstars",
-            joinColumns = @JoinColumn(name = "prise_id"),
-            inverseJoinColumns = @JoinColumn(name = "superstar_id"))
+            joinColumns = @JoinColumn(name = "prise_prise_id"),
+            inverseJoinColumns = @JoinColumn(name = "superstars_superstar_id"))
     private Set<Superstar> superstars = new LinkedHashSet<>();
 
 }

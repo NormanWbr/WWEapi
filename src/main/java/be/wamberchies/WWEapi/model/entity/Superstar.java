@@ -34,21 +34,19 @@ public class Superstar {
     @Column(nullable = false)
     private Boolean Heel;
 
-
-    @ManyToMany(mappedBy = "superstars")
-    private Set<Prise> prises = new LinkedHashSet<>();
-
-
-    @ManyToOne
-    @JoinColumn(name = "team_id")
-    private Team team;
-
-    @OneToMany(mappedBy = "superstar", orphanRemoval = true)
-    private Set<Championship> championships = new LinkedHashSet<>();
+    private String image;
 
     @ManyToMany(mappedBy = "superstars")
     private Set<Show> shows = new LinkedHashSet<>();
 
-    private String image;
+    @ManyToMany(mappedBy = "superstars")
+    private Set<Prise> prises = new LinkedHashSet<>();
+
+    @ManyToMany(mappedBy = "superstars")
+    private Set<Championship> championships = new LinkedHashSet<>();
+
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private Team team;
 
 }

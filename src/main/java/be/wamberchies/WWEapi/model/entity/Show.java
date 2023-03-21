@@ -22,10 +22,12 @@ public class Show {
     @Enumerated(EnumType.STRING)
     private Frequency frequency;
 
+    private String image;
+
     @ManyToMany
     @JoinTable(name = "show_superstars",
-            joinColumns = @JoinColumn(name = "show_id"),
-            inverseJoinColumns = @JoinColumn(name = "superstar_id"))
+            joinColumns = @JoinColumn(name = "show_show_id"),
+            inverseJoinColumns = @JoinColumn(name = "superstars_superstar_id"))
     private Set<Superstar> superstars = new LinkedHashSet<>();
 
 }

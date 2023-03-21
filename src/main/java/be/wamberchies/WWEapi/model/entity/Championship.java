@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 @Entity
 @Getter @Setter
 public class Championship {
@@ -19,12 +22,12 @@ public class Championship {
     @Column(nullable = false)
     private String description;
 
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
+    private String image;
 
-
-    @ManyToOne
-    @JoinColumn(name = "superstar_id")
-    private Superstar superstar;
+    @ManyToMany
+    @JoinTable(name = "championship_superstars",
+            joinColumns = @JoinColumn(name = "championship_championship_id"),
+            inverseJoinColumns = @JoinColumn(name = "superstars_superstar_id"))
+    private Set<Superstar> superstars = new LinkedHashSet<>();
 
 }

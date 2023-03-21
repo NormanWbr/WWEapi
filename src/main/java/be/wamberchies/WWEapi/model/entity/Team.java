@@ -18,6 +18,9 @@ public class Team {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private Boolean heel;
+
     @OneToMany(mappedBy = "team", orphanRemoval = true)
     private Set<Superstar> superstars = new LinkedHashSet<>();
 

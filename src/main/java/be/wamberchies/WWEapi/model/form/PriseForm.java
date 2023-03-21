@@ -15,7 +15,6 @@ public class PriseForm {
         Prise prise = new Prise();
 
         prise.setName(this.name);
-        prise.setDescription(this.description);
         prise.setType(this.type);
 
         return prise;

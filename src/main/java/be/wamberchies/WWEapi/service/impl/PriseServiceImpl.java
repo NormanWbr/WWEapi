@@ -34,7 +34,6 @@ public class PriseServiceImpl implements PriseService {
     @Override
     public void addPrise(PriseForm priseForm) {
         Prise prise = new Prise();
-        prise.setDescription(priseForm.getDescription());
         prise.setName(priseForm.getName());
         prise.setType(priseForm.getType());
         priseRepository.save(prise);

@@ -37,7 +37,6 @@ public class ChampionshipServiceImpl implements ChampionshipService {
     public void addChampionship(ChampionshipForm championshipForm) {
         Championship championship = new Championship();
         championship.setName(championshipForm.getName());
-        championship.setGender(championshipForm.getGender());
         championship.setDescription(championshipForm.getDescription());
         championshipRepository.save(championship);
     }

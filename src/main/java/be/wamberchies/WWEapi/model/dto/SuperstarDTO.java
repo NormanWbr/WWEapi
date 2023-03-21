@@ -28,20 +28,22 @@ public class SuperstarDTO {
     private String team;
     private String image;
 
-public static SuperstarDTO from(Superstar entity){
-return SuperstarDTO.builder()
-        .id(entity.getId())
-        .name(entity.getName())
-        .gender(entity.getGender())
-        .height(entity.getHeight())
-        .weight(entity.getWeight())
-        .entranceMusic(entity.getEntranceMusic())
-        .Heel(entity.getHeel())
-        .prises(entity.getPrises().stream().map(Prise::getName).collect(Collectors.toList()))
-        .shows(entity.getShows().stream().map(Show::getName).collect(Collectors.toList()))
-        .championships(entity.getChampionships().stream().map(Championship::getName).collect(Collectors.toList()))
-        .team(entity.getTeam() == null ? "none" : entity.getTeam().getName())
-        .image(entity.getImage())
-        .build();
-}
+    public static SuperstarDTO from(Superstar entity) {
+        System.out.println(entity.getTeam());
+
+        return SuperstarDTO.builder()
+                .id(entity.getId())
+                .name(entity.getName())
+                .gender(entity.getGender())
+                .entranceMusic(entity.getEntranceMusic())
+                .Heel(entity.getHeel())
+                .height(entity.getHeight())
+                .weight(entity.getWeight())
+                .image(entity.getImage())
+                .shows(entity.getShows().stream().map(Show::getName).collect(Collectors.toList()))
+                .championships(entity.getChampionships().stream().map(Championship::getName).collect(Collectors.toList()))
+                .prises(entity.getPrises().stream().map(Prise::getName).collect(Collectors.toList()))
+                .team(entity.getTeam() != null ? entity.getTeam().getName() : "No teams")
+                .build();
+    }
 }

@@ -14,12 +14,14 @@ public class ShowDTO {
     private String name;
     private Frequency frequency;
     private List<String> superstars;
+    private String image;
 
     public static ShowDTO from(Show entity){
         return ShowDTO.builder()
                 .id(entity.getId())
                 .name(entity.getName())
                 .frequency(entity.getFrequency())
+                .image(entity.getImage())
                 .superstars(entity.getSuperstars().stream().map(superstar -> superstar.getName()).collect(java.util.stream.Collectors.toList()))
                 .build();
     }

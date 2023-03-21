@@ -17,7 +17,6 @@ public class ChampionshipForm {
 
         championship.setName(this.name);
         championship.setDescription(this.description);
-        championship.setGender(this.gender);
 
         return championship;
 
